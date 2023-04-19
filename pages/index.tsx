@@ -3,7 +3,21 @@ import { Link } from "@chakra-ui/react";
 import Head from "next/head";
 import Image from "next/image";
 
-const Home: NextPage = () => {
+import { Data } from "./api/hello";
+import { useEffect, useState } from "react";
+
+const Home: NextPage<Data> = (data) => {
+
+  const [ dataSource, setDataSource ] = useState<Data | null>(null);
+
+  useEffect(()=>{
+    const getData = async () => {
+      const res = await fetch("api/hello");
+      const data = await res.json();
+      setDataSource(data);
+    };
+    getData();
+  },[])
   return (
     <>
       <Head>
@@ -17,7 +31,7 @@ const Home: NextPage = () => {
         </h1>
         <hr />
         <Link href="/about" color="blue.400" _hover={{ color: "blue.500" }}>
-          About
+          About {dataSource?.name}
         </Link>
 
         <footer>
