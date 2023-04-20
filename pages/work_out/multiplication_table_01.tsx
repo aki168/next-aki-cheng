@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { get1to9 } from "../../utils/comman";
 import {
   Card,
   CardBody,
@@ -12,14 +13,6 @@ type Card = {
   key: number;
   constants: number[];
   ans: number[];
-};
-
-const get1to9 = () => {
-  let constantArr = [];
-  for (let i = 1, len = 9; i <= len; i++) {
-    constantArr.push(i);
-  }
-  return constantArr;
 };
 
 const generateCard = (keyNum: number): Card => {
