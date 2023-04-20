@@ -1,6 +1,6 @@
 import { NextPage } from "next";
-import { useEffect, useMemo, useState } from "react";
-import { get1to9 } from "../../utils/comman";
+import { useMemo, useState } from "react";
+import { get1to9 } from "../../utils/common";
 import { SimpleGrid, Heading, Box } from "@chakra-ui/react";
 
 type Status = "O" | "X" | "";
