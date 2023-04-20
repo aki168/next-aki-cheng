@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { get1to9 } from "../../utils/comman";
+import { get1to9 } from "../../utils/common";
 import {
   Card,
   CardBody,
