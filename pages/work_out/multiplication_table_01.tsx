@@ -22,7 +22,7 @@ const get1to9 = () => {
   return constantArr;
 };
 
-const generaterCard = (keyNum: number): Card => {
+const generateCard = (keyNum: number): Card => {
   const ans = get1to9().map((item) => item * keyNum);
   return {
     key: keyNum,
@@ -31,24 +31,25 @@ const generaterCard = (keyNum: number): Card => {
   };
 };
 
-const generaterCards = (): Card[] => get1to9().map((num) => generaterCard(num));
+const generateCards = (): Card[] => get1to9().map((num) => generateCard(num));
 
 const MultiplicationTable: NextPage = () => {
   return (
-    <div className="container mx-auto">
+    <div className="sm:container mx-auto p-4">
+      <Heading size={"4xl"} color={"green.500"} className="pb-6" textAlign={"center"}> 9 X 9 Multiplication Table</Heading>
       <SimpleGrid columns={[2, null, 3]} spacing="40px">
-        {generaterCards().map(({ key, constants, ans }) => (
+        {generateCards().map(({ key, constants, ans }) => (
           <Card
             key={key}
             direction={{ base: "column", sm: "row" }}
             overflow="hidden"
             variant="outline"
           >
-            <Stack>
+            <Stack className="w-full">
               <CardBody>
-                <Heading size={"2xl"}>{key}</Heading>
+                <Heading className="w-1/2 inline-block" color={`cyan.${key}00`} size={"2xl"} >{key}</Heading>
                 {constants.map((constant, idx) => (
-                  <Text py="2" key={`${key} x ${constant}`}>
+                  <Text className="w-1/2 inline-block" py="2" key={`${key} x ${constant}`}>
                     {key} x {constant} = {ans[idx]}
                   </Text>
                 ))}
