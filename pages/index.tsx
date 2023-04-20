@@ -10,6 +10,34 @@ import { useEffect, useState } from "react";
 const Home: NextPage<Data> = () => {
   const [dataSource, setDataSource] = useState<Data | null>(null);
 
+  const navItems = [
+    {
+      key: "home",
+      label: "Home",
+      linkTo: "/",
+    },
+    {
+      key: "about",
+      label: "About",
+      linkTo: "/about",
+    },
+    {
+      key: "work",
+      label: "Works",
+      linkTo: "/works",
+    },
+    {
+      key: "contact",
+      label: "Contact",
+      linkTo: "/contact",
+    },
+    {
+      key: "work_out",
+      label: "work out",
+      linkTo: "/work_out",
+    },
+  ];
+
   useEffect(() => {
     const getData = async () => {
       const res = await fetch("api/hello");
@@ -30,7 +58,7 @@ const Home: NextPage<Data> = () => {
           Hello world! {dataSource?.name}
         </h1>
         <hr />
-        <Navbar/>
+        <Navbar navItems={navItems} />
         <footer>
           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </footer>

@@ -1,17 +1,19 @@
 import { Link, Button, Wrap } from "@chakra-ui/react";
 
-const Navbar = () => {
+type NavItem = {
+  key?: string | number;
+  label: string;
+  linkTo: string;
+};
+
+const Navbar = ({ navItems }: { navItems: NavItem[] | []; }) => {
   return (
     <Wrap spacing="4px">
-      <Link href="/about" color="blue.400" _hover={{ color: "blue.500" }}>
-        <Button>About</Button>
-      </Link>
-      <Link href="/works" color="blue.400" _hover={{ color: "blue.500" }}>
-        <Button>works</Button>
-      </Link>
-      <Link href="/contact" color="blue.400" _hover={{ color: "blue.500" }}>
-        <Button>Contact</Button>
-      </Link>
+      {navItems.map(({ linkTo, label }) => (
+        <Link href={linkTo} color="blue.400" _hover={{ color: "blue.500" }}>
+          <Button>{label}</Button>
+        </Link>
+      ))}
     </Wrap>
   );
 };
