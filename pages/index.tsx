@@ -1,23 +1,23 @@
 import type { NextPage } from "next";
-import { Link } from "@chakra-ui/react";
+
 import Head from "next/head";
 import Image from "next/image";
+import Navbar from "../components/Navbar";
 
 import { Data } from "./api/hello";
 import { useEffect, useState } from "react";
 
-const Home: NextPage<Data> = (data) => {
+const Home: NextPage<Data> = () => {
+  const [dataSource, setDataSource] = useState<Data | null>(null);
 
-  const [ dataSource, setDataSource ] = useState<Data | null>(null);
-
-  useEffect(()=>{
+  useEffect(() => {
     const getData = async () => {
       const res = await fetch("api/hello");
       const data = await res.json();
       setDataSource(data);
     };
     getData();
-  },[])
+  }, []);
   return (
     <>
       <Head>
@@ -27,13 +27,10 @@ const Home: NextPage<Data> = (data) => {
       </Head>
       <div className="container mx-auto">
         <h1 className="text-3xl font-bold underline text-blue-500">
-          Hello world!
+          Hello world! {dataSource?.name}
         </h1>
         <hr />
-        <Link href="/about" color="blue.400" _hover={{ color: "blue.500" }}>
-          About {dataSource?.name}
-        </Link>
-
+        <Navbar/>
         <footer>
           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </footer>
