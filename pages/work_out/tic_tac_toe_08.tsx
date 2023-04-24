@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { useEffect, useMemo, useState, useRef, SetStateAction } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import { get1to9 } from "../../utils/common";
 import { SimpleGrid, Heading, Box } from "@chakra-ui/react";
 
@@ -9,16 +9,14 @@ type BoxZone = {
   id: string;
   setToggle: Function;
   toggle: boolean;
-  setCurrentStepA: Function;
-  setCurrentStepB: Function;
+  setPassIndex: Function;
 };
 
 const Field = ({
   id,
   setToggle,
   toggle,
-  setCurrentStepA,
-  setCurrentStepB,
+  setPassIndex
 }: BoxZone) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const current = useMemo((): Status => {
@@ -36,9 +34,7 @@ const Field = ({
         if (isClicked) return;
         setToggle(!toggle);
         setIsClicked(true);
-        return toggle
-          ? setCurrentStepA({ id: id.valueOf(), symbol: !toggle ? "O" : "X" })
-          : setCurrentStepB({ id: id.valueOf(), symbol: !toggle ? "O" : "X" });
+        setPassIndex(id);
       }}
     >
       <p className="text-4xl">{current}</p>
@@ -47,23 +43,12 @@ const Field = ({
 };
 
 const TicTacToe: NextPage = () => {
+  const isInitMount = useRef(true);
   const [toggle, setToggle] = useState<boolean>(false);
-  const [currentGameA, setCurrentGameA] = useState<Status[]>(
-    get1to9().map((item) => "")
-  );
-  const [currentGameB, setCurrentGameB] = useState<Status[]>(
-    get1to9().map((item) => "")
-  );
-  const [currentStepA, setCurrentStepA] = useState<{
-    id: number;
-    symbol: Status;
-  }>({ id: 0, symbol: "" });
-  const [currentStepB, setCurrentStepB] = useState<{
-    id: number;
-    symbol: Status;
-  }>({ id: 0, symbol: "" });
-
   const [isOver, setIsOver] = useState<boolean>(false);
+  const [passIndex, setPassIndex] = useState<number>(0);
+  const [currentUserA, setCurrentUserA] = useState<Status[]>([]);
+  const [currentUserB, setCurrentUserB] = useState<Status[]>([]);
 
   const getEndCondition = (checkSymbol: Status) => {
     let winCondition = [
@@ -83,22 +68,24 @@ const TicTacToe: NextPage = () => {
     id: box.toString(),
   }));
 
-  useEffect(() => {
-    // if (!toggle) {
-      setCurrentGameA((prevArr) => {
-        prevArr[currentStepA.id-1] = currentStepA.symbol;
-        return prevArr;
-      });
-      // console.log(getEndCondition(currentStepA.symbol))
-    // } else {
-      setCurrentGameB((prevArr) => {
-        prevArr[currentStepB.id-1] = currentStepB.symbol;
-        return prevArr;
-      });
-      // console.log(getEndCondition(currentStepB.symbol))
-    // }
-  }, [toggle]);
-
+  useEffect(()=>{
+    if(isInitMount.current){
+      isInitMount.current = false
+    } else {
+      return toggle ? () => {
+        setCurrentUserA(prev=> {
+          prev[passIndex]="X";
+          return prev
+        })
+      } : () => {
+        setCurrentUserB(prev=> {
+          prev[passIndex]="O";
+          return prev
+        })
+      }
+    }
+    console.log(currentUserA, currentUserB)
+  },[toggle, passIndex])
   return (
     <div className="sm:container mx-auto p-4">
       <Heading
@@ -121,8 +108,7 @@ const TicTacToe: NextPage = () => {
               id={id}
               toggle={toggle}
               setToggle={setToggle}
-              setCurrentStepA={setCurrentStepA}
-              setCurrentStepB={setCurrentStepB}
+              setPassIndex={setPassIndex}
             />
           ))}
         </SimpleGrid>
