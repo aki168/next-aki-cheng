@@ -12,20 +12,21 @@ type BoxZone = {
   setPassIndex: Function;
 };
 
-const Field = ({
-  id,
-  setToggle,
-  toggle,
-  setPassIndex
-}: BoxZone) => {
+const Field = ({ id, setToggle, toggle, setPassIndex }: BoxZone) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
-  const current = useMemo((): Status => {
+  const [current, setCurrent] = useState<Status>("");
+  // const current = useMemo((): Status => {
+  //   if (isClicked) {
+  //     return toggle ? "O" : "X";
+  //   } else {
+  //     return "";
+  //   }
+  // }, [isClicked]);
+  useEffect(()=>{
     if (isClicked) {
-      return toggle ? "O" : "X";
-    } else {
-      return "";
-    }
-  }, [isClicked]);
+      setCurrent(toggle ? "O" : "X");
+    } 
+  },[isClicked])
   return (
     <Box
       id={id}
@@ -61,31 +62,34 @@ const TicTacToe: NextPage = () => {
       [checkSymbol, "", "", "", checkSymbol, "", "", "", checkSymbol],
       ["", "", checkSymbol, "", checkSymbol, "", checkSymbol, "", ""],
     ];
-    return winCondition.map(arr => JSON.stringify(arr));
+    return winCondition.map((arr) => JSON.stringify(arr));
   };
 
   const boxes = get1to9().map((box) => ({
     id: box.toString(),
   }));
 
-  useEffect(()=>{
-    if(isInitMount.current){
-      isInitMount.current = false
+  useEffect(() => {
+    if (isInitMount.current) {
+      isInitMount.current = false;
     } else {
-      return toggle ? () => {
-        setCurrentUserA(prev=> {
-          prev[passIndex]="X";
-          return prev
-        })
-      } : () => {
-        setCurrentUserB(prev=> {
-          prev[passIndex]="O";
-          return prev
-        })
-      }
+      return toggle
+        ? () => {
+            setCurrentUserA((prev) => {
+              let newArr = [...prev];
+              newArr[Number(passIndex)] = "X";
+              return newArr;
+            });
+          }
+        : () => {
+            setCurrentUserB((prev) => {
+              let newArr = [...prev];
+              newArr[Number(passIndex)] = "O";
+              return newArr;
+            });
+          };
     }
-    console.log(currentUserA, currentUserB)
-  },[toggle, passIndex])
+  }, [passIndex]);
   return (
     <div className="sm:container mx-auto p-4">
       <Heading
