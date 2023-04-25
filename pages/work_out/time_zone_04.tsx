@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 interface ZoneCard {
   city: string;
   utcDiff: number;
+  idx: number;
 }
 
 type LocalTime = {
@@ -16,8 +17,7 @@ type LocalTime = {
   minute: string;
 };
 
-const Zone = ({ city, utcDiff }: ZoneCard) => {
-  // const [current, setCurrent] = useState<string>("");
+const Zone = ({ city, utcDiff, idx }: ZoneCard) => {
   const [time, setTime] = useState<LocalTime>();
 
   const monthNames = [
@@ -39,11 +39,10 @@ const Zone = ({ city, utcDiff }: ZoneCard) => {
     num.toString().length === 1 ? `0${num}` : `${num}`;
 
   useEffect(() => {
-    const updateIn1Min = (diff: number) => {
-      let oclock = new Date();
-      console.log(oclock)
-      oclock.setUTCHours(oclock.getUTCHours() + diff);
+    const updateInHalfMin = (diff: number) => {
       const init = () => {
+        let oclock = new Date();
+        oclock.setUTCHours(oclock.getUTCHours() + diff);
         setTime({
           year: oclock.getFullYear(),
           month: monthNames[oclock.getMonth()],
@@ -53,15 +52,15 @@ const Zone = ({ city, utcDiff }: ZoneCard) => {
         });
       };
       init();
-      setInterval(init, 6 * 1000);
+      setInterval(init, 30 * 1000);
     };
-    updateIn1Min(utcDiff);
+    updateInHalfMin(utcDiff);
   }, []);
   return (
     <Card
       display={"flex"}
-      background={"black"}
-      textColor={"white"}
+      textColor={`${idx % 2 === 0 ? "black" : "white"}`}
+      background={`${idx % 2 === 0 ? "white" : "black"}`}
       padding={4}
       borderRadius={"none"}
       border={"white"}
@@ -83,7 +82,7 @@ const Zone = ({ city, utcDiff }: ZoneCard) => {
 
 const TimeZone: NextPage = () => {
   const cityList = useMemo(
-    (): ZoneCard[] => [
+    () => [
       {
         city: "NEW YORK",
         utcDiff: -4,
@@ -120,8 +119,8 @@ const TimeZone: NextPage = () => {
         >
           <Heading>WORLD TIME</Heading>
         </Card>
-        {cityList.map((zone) => (
-          <Zone key={zone.city} {...zone} />
+        {cityList.map((zone, idx) => (
+          <Zone key={idx} idx={idx} {...zone} />
         ))}
       </Box>
     </div>
