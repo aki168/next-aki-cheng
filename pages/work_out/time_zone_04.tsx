@@ -68,14 +68,14 @@ const Zone = ({ city, utcDiff, idx, total }: ZoneCard) => {
   }, []);
   return (
     <Card {...cardStyle}>
-      <SimpleGrid columns={[2, null, 1]}>
+      <SimpleGrid columns={[2, 2, 2]}>
         <Flex direction={"column"}>
-          <Heading>{city}</Heading>
+          <Heading size={"lg"}>{city}</Heading>
           <Heading size={"md"}>
             {time?.date} {time?.month}. {time?.year}
           </Heading>
         </Flex>
-        <Heading textAlign={"center"} size={"4xl"}>
+        <Heading textAlign={"center"} size={"3xl"}>
           {time?.hour}:{time?.minute}
         </Heading>
       </SimpleGrid>
@@ -110,7 +110,7 @@ const TimeZone: NextPage = () => {
     []
   );
   return (
-    <div className="container mx-auto p-3">
+    <div className="container mx-auto p-3 max-w-sm">
       <Box borderRadius={"none"} border={"1px"} >
         <Card
           background={"black"}
