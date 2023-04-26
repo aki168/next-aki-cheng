@@ -7,6 +7,7 @@ interface ZoneCard {
   city: string;
   utcDiff: number;
   idx: number;
+  total: number;
 }
 
 type LocalTime = {
@@ -17,7 +18,7 @@ type LocalTime = {
   minute: string;
 };
 
-const Zone = ({ city, utcDiff, idx }: ZoneCard) => {
+const Zone = ({ city, utcDiff, idx, total }: ZoneCard) => {
   const [time, setTime] = useState<LocalTime>();
 
   const monthNames = [
@@ -34,6 +35,15 @@ const Zone = ({ city, utcDiff, idx }: ZoneCard) => {
     "November",
     "December",
   ];
+
+  const cardStyle = {
+    display: "flex",
+    padding: 4,
+    border: "white",
+    textColor: idx % 2 === 0 ? "black" : "white",
+    background: idx % 2 === 0 ? "white" : "black",
+    borderRadius: "none",
+  };
 
   const zeroInHead = (num: number) =>
     num.toString().length === 1 ? `0${num}` : `${num}`;
@@ -57,14 +67,7 @@ const Zone = ({ city, utcDiff, idx }: ZoneCard) => {
     updateInHalfMin(utcDiff);
   }, []);
   return (
-    <Card
-      display={"flex"}
-      textColor={`${idx % 2 === 0 ? "black" : "white"}`}
-      background={`${idx % 2 === 0 ? "white" : "black"}`}
-      padding={4}
-      borderRadius={"none"}
-      border={"white"}
-    >
+    <Card {...cardStyle}>
       <SimpleGrid columns={[2, null, 1]}>
         <Flex direction={"column"}>
           <Heading>{city}</Heading>
@@ -108,7 +111,7 @@ const TimeZone: NextPage = () => {
   );
   return (
     <div className="container mx-auto p-3">
-      <Box borderRadius={"md"} border={"1px"}>
+      <Box borderRadius={"none"} border={"1px"} >
         <Card
           background={"black"}
           textColor={"white"}
@@ -120,7 +123,7 @@ const TimeZone: NextPage = () => {
           <Heading>WORLD TIME</Heading>
         </Card>
         {cityList.map((zone, idx) => (
-          <Zone key={idx} idx={idx} {...zone} />
+          <Zone key={idx} idx={idx} total={cityList.length} {...zone} />
         ))}
       </Box>
     </div>
