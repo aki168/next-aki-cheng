@@ -7,7 +7,6 @@ interface ZoneCard {
   city: string;
   utcDiff: number;
   idx: number;
-  total: number;
 }
 
 type LocalTime = {
@@ -18,7 +17,7 @@ type LocalTime = {
   minute: string;
 };
 
-const Zone = ({ city, utcDiff, idx, total }: ZoneCard) => {
+const Zone = ({ city, utcDiff, idx }: ZoneCard) => {
   const [time, setTime] = useState<LocalTime>();
 
   const monthNames = [
@@ -51,14 +50,15 @@ const Zone = ({ city, utcDiff, idx, total }: ZoneCard) => {
   useEffect(() => {
     const updateInHalfMin = (diff: number) => {
       const init = () => {
-        let oclock = new Date();
-        oclock.setUTCHours(oclock.getUTCHours() + diff);
+        let clock = new Date();
+        let getLocalDiff = (clock.getTimezoneOffset()) / 60;
+        clock.setUTCHours(clock.getUTCHours() + getLocalDiff + diff);
         setTime({
-          year: oclock.getFullYear(),
-          month: monthNames[oclock.getMonth()],
-          date: zeroInHead(oclock.getDate()),
-          hour: zeroInHead(oclock.getHours()),
-          minute: zeroInHead(oclock.getMinutes()),
+          year: clock.getFullYear(),
+          month: monthNames[clock.getMonth()],
+          date: zeroInHead(clock.getDate()),
+          hour: zeroInHead(clock.getHours()),
+          minute: zeroInHead(clock.getMinutes()),
         });
       };
       init();
@@ -103,6 +103,10 @@ const TimeZone: NextPage = () => {
         utcDiff: 8,
       },
       {
+        city: "OSAKA",
+        utcDiff: 9,
+      },
+      {
         city: "SYDNEY",
         utcDiff: 10,
       },
@@ -123,7 +127,7 @@ const TimeZone: NextPage = () => {
           <Heading>WORLD TIME</Heading>
         </Card>
         {cityList.map((zone, idx) => (
-          <Zone key={idx} idx={idx} total={cityList.length} {...zone} />
+          <Zone key={idx} idx={idx} {...zone} />
         ))}
       </Box>
     </div>
