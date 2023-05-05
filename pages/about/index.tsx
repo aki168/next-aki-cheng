@@ -19,7 +19,7 @@ const About: NextPage = () => {
       <div className="container mx-auto">
         <section className="about">
           <h2 className="about__title">About</h2>
-          <img src="icon.jpg" alt="aki" className="about__main-pic mx-auto" />
+          <Image src="icon.jpg" alt="aki" className="about__main-pic mx-auto"/>
           <article className="about__content">
             <p className="about__content--profile">
               鄭資馨 AKI

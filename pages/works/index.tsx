@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Navbar from "../../components/Navbar";
+import Image from 'next/image'
 import Layout from "../../components/Layout";
 
 const WorksPage: NextPage = () => {
@@ -27,15 +27,15 @@ const WorksPage: NextPage = () => {
             </article>
             <div className="brand__photo-list">
               <div className="brand__photo-list__one-item">
-                <img src="point4z.png" alt="brand_img" className="mx-auto" />
+                <Image width={700} height={500} src="/point4z.png" alt="brand_img" className="mx-auto" />
               </div>
               <div className="brand__photo-list__two-item">
-                <img src="point2.png" alt="brand_img" />
-                <img src="point3.png" alt="brand_img" />
+                <Image width={400} height={400} src="/point2.png" alt="brand_img" />
+                <Image width={400} height={400} src="/point3.png" alt="brand_img" />
               </div>
               <div className="brand__photo-list__two-item">
-                <img src="point1.png" alt="brand_img" />
-                <img src="skill-s.png" alt="brand_img" />
+                <Image width={400} height={400} src="/point1.png" alt="brand_img" />
+                <Image width={400} height={400} src="/skill-s.png" alt="brand_img" />
               </div>
             </div>
           </div>
@@ -64,15 +64,15 @@ const WorksPage: NextPage = () => {
             </article>
             <div className="brand__photo-list">
               <div className="brand__photo-list__one-item">
-                <img src="komoru01.jpg" alt="brand_img" className="mx-auto" />
+                <Image width={700} height={500} src="/komoru01.jpg" alt="brand_img" className="mx-auto" />
               </div>
               <div className="brand__photo-list__two-item">
-                <img src="komoru02.jpg" alt="brand_img" />
-                <img src="komoru03.jpg" alt="brand_img" />
+                <Image width={400} height={400} src="/komoru02.jpg" alt="brand_img" />
+                <Image width={400} height={400} src="/komoru03.jpg" alt="brand_img" />
               </div>
               <div className="brand__photo-list__two-item">
-                <img src="home-user.png" alt="brand_img" />
-                <img src="skill.jpg" alt="brand_img" />
+                <Image width={400} height={400} src="/home-user.png" alt="brand_img" />
+                <Image width={400} height={400} src="/skill.jpg" alt="brand_img" />
               </div>
             </div>
             <article className="brand__content">
@@ -118,11 +118,11 @@ const WorksPage: NextPage = () => {
             </article>
             <div className="brand__photo-list">
               <div className="brand__photo-list__one-item">
-                <img src="dental2.jpg" alt="brand_img" className="mx-auto" />
+                <Image  width={700} height={500} src="/dental2.jpg" alt="brand_img" className="mx-auto" />
               </div>
               <div className="brand__photo-list__two-item">
-                <img src="dental1.jpg" alt="brand_img" />
-                <img src="dental3.jpg" alt="brand_img" />
+                <Image width={400} height={400} src="/dental1.jpg" alt="brand_img" />
+                <Image width={400} height={400} src="/dental3.jpg" alt="brand_img" />
               </div>
             </div>
           </div>
@@ -141,7 +141,7 @@ const WorksPage: NextPage = () => {
             </article>
             <div className="brand__photo-list">
               <div className="brand__photo-list__one-item">
-                <img src="wowtch.jpg" alt="brand_img" className="mx-auto" />
+                <Image  width={700} height={500} src="/wowtch.jpg" alt="brand_img" className="mx-auto" />
               </div>
             </div>
           </div>

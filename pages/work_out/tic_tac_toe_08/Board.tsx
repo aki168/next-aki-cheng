@@ -34,7 +34,6 @@ const Board = ({ onGameEnd }: { onGameEnd: (winner: Winner) => void }) => {
     if(winnerSymbol){
       onGameEnd(winnerSymbol);
     }
-    console.log(winnerSymbol, tie);
   },[winnerSymbol, tie])
   return (
     <Wrapper
