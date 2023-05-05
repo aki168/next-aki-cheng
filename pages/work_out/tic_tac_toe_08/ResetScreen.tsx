@@ -1,5 +1,5 @@
 import { Box, Heading, Button } from "@chakra-ui/react";
-import { Winner } from ".";
+import { Winner } from "./types";
 
 const ResetScreen = ({
   winner,
@@ -10,9 +10,13 @@ const ResetScreen = ({
 }) => {
   return (
     <Box textColor={"white"} textAlign={"center"} paddingY={"45%"}>
-      <Heading>{winner} is winner</Heading>
-      <Button colorScheme={"yellow"} onClick={onReset}>
-        START
+      {winner === "tie" ? (
+        <Heading>tie!</Heading>
+      ) : (
+        <Heading>{winner} is winner</Heading>
+      )}
+      <Button colorScheme={"yellow"} onClick={onReset} className="mt-3">
+        RESTART
       </Button>
     </Box>
   );
