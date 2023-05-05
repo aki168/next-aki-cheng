@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { Card, Flex, Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
+import { WorkHeader } from "../../components/WorkHeader";
 
 // 先從自己所在的時區，推到 UTC+0 然後再加上 timezone
 interface ZoneCard {
@@ -51,7 +52,7 @@ const Zone = ({ city, utcDiff, idx }: ZoneCard) => {
     const updateInHalfMin = (diff: number) => {
       const init = () => {
         let clock = new Date();
-        let getLocalDiff = (clock.getTimezoneOffset()) / 60;
+        let getLocalDiff = clock.getTimezoneOffset() / 60;
         clock.setUTCHours(clock.getUTCHours() + getLocalDiff + diff);
         setTime({
           year: clock.getFullYear(),
@@ -114,8 +115,9 @@ const TimeZone: NextPage = () => {
     []
   );
   return (
-    <div className="container mx-auto p-3 max-w-sm">
-      <Box borderRadius={"none"} border={"1px"} >
+    <div className="container mx-auto p-3">
+      <WorkHeader isShowBackBtn={true}/>
+      <Box borderRadius={"none"} border={"1px"} className="container mx-auto max-w-sm">
         <Card
           background={"black"}
           textColor={"white"}

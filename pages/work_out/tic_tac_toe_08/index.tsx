@@ -5,6 +5,7 @@ import { Winner, GameState } from "./types";
 import StartScreen from "./StartScreen";
 import Board from "./Board";
 import ResetScreen from "./ResetScreen";
+import { WorkHeader } from "../../../components/WorkHeader";
 
 const TicTacToe: NextPage = () => {
   const [gameState, setGameState] = useState<GameState>("start");
@@ -26,6 +27,7 @@ const TicTacToe: NextPage = () => {
 
   return (
     <div className="container mx-auto p-4">
+      <WorkHeader isShowBackBtn={true}/>
       <Heading
         size={"4xl"}
         color={"blue.400"}

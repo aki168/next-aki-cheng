@@ -8,6 +8,7 @@ import {
   Text,
   SimpleGrid,
 } from "@chakra-ui/react";
+import { WorkHeader } from "../../components/WorkHeader";
 
 type Card = {
   key: number;
@@ -29,6 +30,7 @@ const generateCards = (): Card[] => get1to9().map((num) => generateCard(num));
 const MultiplicationTable: NextPage = () => {
   return (
     <div className="sm:container mx-auto p-4">
+      <WorkHeader isShowBackBtn={true}/>
       <Heading
         size={"4xl"}
         color={"green.500"}
