@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { WorkHeader } from "../../components/WorkHeader";
-import { Heading, Text, Link } from "@chakra-ui/react";
+import { Text, Link } from "@chakra-ui/react";
+import Layout from "../../components/Layout";
 
 const WorkOutPage: NextPage = () => {
   const NavItems = [
@@ -67,35 +68,37 @@ const WorkOutPage: NextPage = () => {
   ];
 
   return (
-    <div className="container mx-auto py-6">
-      <WorkHeader isShowBackBtn={false}/>
-      <div className="grid auto-rows-[192px] grid-cols-3 gap-4 py-4">
-        {NavItems.map(({ label, linkTo }, i) => {
-          let linkToogle = () => (linkTo ? { href: linkTo } : {});
-          return (
-            <Link
-              {...linkToogle()}
-              key={i}
-              color="blue.100"
-              _hover={{ color: "blue.500", background: "blue.100" }}
-              className={`row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 dark:bg-neutral-900 ${
-                i === 3 || i === 6 ? "col-span-2" : ""
-              }`}
-            >
-              <Text
-                fontWeight={"bold"}
-                textAlign={"center"}
-                marginY={"auto"}
-                height={"full"}
-                fontSize={"2xl"}
+    <Layout>
+      <div className="container mx-auto py-6">
+        <WorkHeader isShowBackBtn={false} />
+        <div className="grid auto-rows-[192px] grid-cols-3 gap-4 py-4">
+          {NavItems.map(({ label, linkTo }, i) => {
+            let linkToggle = () => (linkTo ? { href: linkTo } : {});
+            return (
+              <Link
+                {...linkToggle()}
+                key={i}
+                color="blue.100"
+                _hover={{ color: "blue.500", background: "blue.100" }}
+                className={`row-span-1 rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 dark:bg-neutral-900 ${
+                  i === 3 || i === 6 ? "col-span-2" : ""
+                }`}
               >
-                {label}
-              </Text>
-            </Link>
-          );
-        })}
+                <Text
+                  fontWeight={"bold"}
+                  textAlign={"center"}
+                  marginY={"auto"}
+                  height={"full"}
+                  fontSize={"2xl"}
+                >
+                  {label}
+                </Text>
+              </Link>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

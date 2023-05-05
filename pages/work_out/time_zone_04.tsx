@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { Card, Flex, Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
 import { WorkHeader } from "../../components/WorkHeader";
+import { IconBtn } from "../../components/IconBtn";
 
 // 先從自己所在的時區，推到 UTC+0 然後再加上 timezone
 interface ZoneCard {
@@ -117,6 +118,12 @@ const TimeZone: NextPage = () => {
   return (
     <div className="container mx-auto p-3">
       <WorkHeader isShowBackBtn={true}/>
+      <Box textAlign={"end"}>
+        <IconBtn
+          faClass="fa-brands fa-github"
+          linkTo={`https://github.com/aki168/next-aki-cheng/blob/main/pages/work_out/time_zone_04.tsx`}
+        />
+      </Box>
       <Box borderRadius={"none"} border={"1px"} className="container mx-auto max-w-sm">
         <Card
           background={"black"}
