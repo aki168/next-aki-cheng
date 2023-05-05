@@ -1,5 +1,5 @@
 import { Box, Heading, Button } from "@chakra-ui/react";
-import { Winner } from "./types";
+import { Winner } from "../../../types";
 
 const ResetScreen = ({
   winner,

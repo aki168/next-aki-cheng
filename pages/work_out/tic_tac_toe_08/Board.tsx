@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { SimpleGrid as Wrapper } from "@chakra-ui/react";
-import { CellValue, Winner } from "./types";
-import { Cell } from "./Cell";
+import { CellValue, Winner } from "../../../types";
+import { Cell } from "../../../components/Cell";
 
 const winConditions = [
   [0, 1, 2],[3, 4, 5],[6, 7, 8], // すいへいせん

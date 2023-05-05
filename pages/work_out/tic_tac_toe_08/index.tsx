@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { useState } from "react";
 import { Heading, Box } from "@chakra-ui/react";
-import { Winner, GameState } from "./types";
+import { Winner, GameState } from "../../../types";
 import StartScreen from "./StartScreen";
 import Board from "./Board";
 import ResetScreen from "./ResetScreen";

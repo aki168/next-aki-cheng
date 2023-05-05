@@ -1,4 +1,4 @@
-import { Link, Button, Wrap, Text } from "@chakra-ui/react";
+import { Link, Button, Wrap, Text, Box } from "@chakra-ui/react";
 import { IconBtn } from "./IconBtn";
 import Head from "next/head";
 
@@ -63,7 +63,7 @@ const Navbar = () => {
           referrerPolicy="no-referrer"
         />
       </Head>
-      <section className="hero--wrap">
+      <Box className="hero--wrap" backgroundImage="url('hero.png')">
         <div className="hero">
           <div className="hero__content">Front End Developer</div>
           <Text
@@ -85,7 +85,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-      </section>
+      </Box>
     </>
   );
 };
