@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SimpleGrid as Wrapper } from "@chakra-ui/react";
 import { CellValue, Winner } from "./types";
 import { Cell } from "./Cell";
@@ -21,11 +21,21 @@ const Board = ({ onGameEnd }: { onGameEnd: (winner: Winner) => void }) => {
 
   const winCondition = winConditions.find(cond => {
 		const line = cond.map(cellIndex => cells[cellIndex]); /// set symbol
-		return line[0] && line.every(cellValue => cellValue === line[0]); // symbol in line => "the same"
+		return line[0] && line.every(cellValue => cellValue === line[0]); // symbol in line => "all the same"
 	});
+  // winCondition .... ex: [1, 4, 7]
   
-  const winnerStmbol = winCondition ? cells[winCondition[0]] : undefined;
+  const winnerSymbol = winCondition ? cells[winCondition[0]] : undefined;
 
+  useEffect(()=>{
+    if(tie) {
+      onGameEnd("tie");
+    }
+    if(winnerSymbol){
+      onGameEnd(winnerSymbol);
+    }
+    console.log(winnerSymbol, tie);
+  },[winnerSymbol, tie])
   return (
     <Wrapper
       textColor={"white"}

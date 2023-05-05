@@ -10,8 +10,12 @@ const ResetScreen = ({
 }) => {
   return (
     <Box textColor={"white"} textAlign={"center"} paddingY={"45%"}>
-      <Heading>{winner} is winner</Heading>
-      <Button colorScheme={"yellow"} onClick={onReset}>
+      {winner === "tie" ? (
+        <Heading>tie!</Heading>
+      ) : (
+        <Heading>{winner} is winner</Heading>
+      )}
+      <Button colorScheme={"yellow"} onClick={onReset} className="mt-3">
         RESTART
       </Button>
     </Box>
