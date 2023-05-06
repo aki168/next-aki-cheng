@@ -1,8 +1,5 @@
 import type { NextPage } from "next";
 
-import Layout from "../components/Layout";
-import Navbar from "../components/Navbar";
-
 import { Data } from "./api/hello";
 import { useEffect, useState } from "react";
 import About from "./about";

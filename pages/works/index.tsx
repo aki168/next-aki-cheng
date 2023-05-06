@@ -17,12 +17,16 @@ const WorksPage: NextPage = () => {
               <br />
               依產地、酒名等獲得風味情報、排行
               <br />
-              <a href="https://github.com/aki168/sakeholic" target="_blank">
+              <a href="https://github.com/aki168/sakeholic" target="_blank" className="px-1">
                 GitHub
               </a>{" "}
               |
-              <a href="https://aki168.github.io/sakeholic/" target="_blank">
+              <a href="https://aki168.github.io/sakeholic/" target="_blank" className="px-1">
                 DEMO
+              </a>
+              |
+              <a href=" https://docs.google.com/presentation/d/1KX3Ik6XWJaW9c_FRWk2a39AL90tJG4WeWA1TQKdTm5Q/edit?usp=sharing" target="_blank" className="px-1">
+              線上發表簡報
               </a>
             </article>
             <div className="brand__photo-list">
@@ -51,13 +55,13 @@ const WorksPage: NextPage = () => {
               <br />
               並提供精選日租青旅訂房服務
               <br />
-              <a href="https://github.com/aki168/komoru" target="_blank">
+              <a href="https://github.com/aki168/komoru" target="_blank" className="px-1">
                 GitHub
               </a>{" "}
               |
               <a
                 href="https://docs.google.com/document/d/1YBaLi97KjZeulR4dnGp-7TjwSsYcH7I7/edit?usp=sharing&ouid=101903928695152348684&rtpof=true&sd=true"
-                target="_blank"
+                target="_blank" className="px-1"
               >
                 企劃書
               </a>

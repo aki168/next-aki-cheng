@@ -11,7 +11,6 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
-import Navbar from "../../components/Navbar";
 
 const About: NextPage = () => {
   return (

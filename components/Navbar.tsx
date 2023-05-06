@@ -1,6 +1,7 @@
 import { Link, Button, Wrap, Text, Box } from "@chakra-ui/react";
 import { IconBtn } from "./IconBtn";
 import Head from "next/head";
+import NextLink from "next/link";
 
 type NavItem = {
   key?: string | number;
@@ -74,10 +75,17 @@ const Navbar = () => {
           >
             Photography in Tsukiji, Japan.
           </Text>
-          <h1 className="hero__title">
-            <p>HERE IS</p>
+          <Link
+            className="hero__title"
+            href={"/"}
+            display={"block"}
+            as={NextLink}
+            style={{ textDecoration: "none" }}
+          >
+            HERE IS
+            <br />
             AKI CHENG
-          </h1>
+          </Link>
           <Menu navItems={navItems} />
           <ul className="hero__list">
             {icons.map((item, idx) => (
@@ -94,13 +102,14 @@ const Menu = ({ navItems }: { navItems: NavItem[] | [] }) => {
   return (
     <Wrap spacing="4px">
       {navItems.map(({ linkTo, label, key }) => {
-        let linkToogle = () => (linkTo ? { href: linkTo } : {});
+        let linkToggle = () => (linkTo ? { href: linkTo } : {});
         return (
           <Button key={key || label} size={"sm"} variant={"ghost"}>
-            <Link
-              {...linkToogle()}
+            <Link as={NextLink}
+              {...linkToggle()}
               color={"white"}
               _hover={{ color: "blue.500" }}
+              fontSize={["md","xl"]}
             >
               {label}
             </Link>

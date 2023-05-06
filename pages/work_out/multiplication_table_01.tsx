@@ -40,16 +40,16 @@ const MultiplicationTable: NextPage = () => {
         />
       </Box>
       <Heading
-        size={"4xl"}
+        size={"2xl"}
         color={"green.500"}
         className="pb-6"
         textAlign={"center"}
       >
         9 X 9 Multiplication Table
-        <span className="text-sm ps-2 text-blue-800">By TypeScript</span>
+        <span className="text-sm ps-2 text-blue-800">TypeScript</span>
       </Heading>
       <SimpleGrid
-        columns={[2, null, 3]}
+        columns={[1, 2, 3]}
         spacing="40px"
         maxWidth={"900px"}
         marginX={"auto"}
@@ -62,7 +62,7 @@ const MultiplicationTable: NextPage = () => {
             variant="outline"
           >
             <Stack className="w-full">
-              <CardBody>
+              <CardBody textAlign={"center"}>
                 <Heading
                   className="w-1/2 inline-block"
                   color={`cyan.${key}00`}

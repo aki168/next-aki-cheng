@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import NextLink from "next/link";
 import { WorkHeader } from "../../components/WorkHeader";
 import { Text, Link } from "@chakra-ui/react";
 import Layout from "../../components/Layout";
@@ -10,7 +11,7 @@ const WorkOutPage: NextPage = () => {
       linkTo: "/work_out/multiplication_table_01",
     },
     {
-      label: "Olock",
+      label: "clock",
       linkTo: "",
     },
     {
@@ -69,14 +70,14 @@ const WorkOutPage: NextPage = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto py-6">
+      <div className="container mx-auto py-4 px-2">
         <WorkHeader isShowBackBtn={false} />
-        <div className="grid auto-rows-[192px] grid-cols-3 gap-4 py-4">
+        <div className="grid auto-rows-[192px] grid-cols-1 md:grid-cols-3 gap-4 py-4">
           {NavItems.map(({ label, linkTo }, i) => {
-            let linkToggle = () => (linkTo ? { href: linkTo } : {});
             return (
               <Link
-                {...linkToggle()}
+                href={linkTo || ""}
+                as={NextLink}
                 key={i}
                 color="blue.100"
                 _hover={{ color: "blue.500", background: "blue.100" }}
