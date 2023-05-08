@@ -1,13 +1,19 @@
 import { NextPage } from "next";
 import Navbar from "../../components/Navbar";
+import { withTranslation, WithTranslation } from "react-i18next";
 
-const ContactPage: NextPage = () => {
+interface Props extends WithTranslation {};
+
+const ContactPage: NextPage<Props> = ({t}) => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto">Contact</div>
+      <div className="container mx-auto">
+        <h1>Contact</h1>
+        <p>{t("myName")}</p>
+      </div>
     </>
   );
 };
 
-export default ContactPage;
+export default withTranslation()(ContactPage);
