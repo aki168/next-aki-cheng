@@ -22,20 +22,22 @@ type LocalTime = {
 const Zone = ({ city, utcDiff, idx }: ZoneCard) => {
   const [time, setTime] = useState<LocalTime>();
 
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+  const monthNames = useMemo(
+    () => [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    []
+  );
 
   const cardStyle = {
     display: "flex",
@@ -67,7 +69,7 @@ const Zone = ({ city, utcDiff, idx }: ZoneCard) => {
       setInterval(init, 30 * 1000);
     };
     updateInHalfMin(utcDiff);
-  }, []);
+  }, [utcDiff, monthNames]);
   return (
     <Card {...cardStyle}>
       <SimpleGrid columns={[2, 2, 2]}>
@@ -117,14 +119,18 @@ const TimeZone: NextPage = () => {
   );
   return (
     <div className="container mx-auto p-3">
-      <WorkHeader isShowBackBtn={true}/>
+      <WorkHeader isShowBackBtn={true} />
       <Box textAlign={"end"}>
         <IconBtn
           faClass="fa-brands fa-github"
           linkTo={`https://github.com/aki168/next-aki-cheng/blob/main/pages/work_out/time_zone_04.tsx`}
         />
       </Box>
-      <Box borderRadius={"none"} border={"1px"} className="container mx-auto max-w-sm">
+      <Box
+        borderRadius={"none"}
+        border={"1px"}
+        className="container mx-auto max-w-sm"
+      >
         <Card
           background={"black"}
           textColor={"white"}

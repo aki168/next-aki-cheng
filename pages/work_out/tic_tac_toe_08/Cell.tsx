@@ -1,7 +1,7 @@
-import { CellProps } from "../types";
+import { CellProps } from "../../../types";
 import { Box } from "@chakra-ui/react";
 
-export const Cell = ({ value, toggle, idx }: CellProps) => {
+const Cell = ({ value, toggle, idx }: CellProps) => {
   return (
     <Box
       width={"150px"}
@@ -17,3 +17,5 @@ export const Cell = ({ value, toggle, idx }: CellProps) => {
     </Box>
   );
 };
+
+export default Cell;

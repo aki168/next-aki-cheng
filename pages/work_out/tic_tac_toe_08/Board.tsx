@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import { SimpleGrid as Wrapper } from "@chakra-ui/react";
 import { CellValue, Winner } from "../../../types";
-import { Cell } from "../../../components/Cell";
+import Cell from "./Cell";
 
 const winConditions = [
-  [0, 1, 2],[3, 4, 5],[6, 7, 8], // すいへいせん
-  [0, 3, 6],[1, 4, 7],[2, 5, 8], // すいちょく
-  [0, 4, 8],[2, 4, 6], // きょくせん
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8], // すいへいせん
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8], // すいちょく
+  [0, 4, 8],
+  [2, 4, 6], // きょくせん
 ];
 
 const Board = ({ onGameEnd }: { onGameEnd: (winner: Winner) => void }) => {
@@ -16,25 +21,27 @@ const Board = ({ onGameEnd }: { onGameEnd: (winner: Winner) => void }) => {
   const tie = cells.filter(Boolean).length === 9;
 
   const toggleCell = (idx: number) => {
-    setCells(prevCells => prevCells.map((cell, i) => (idx === i ? currentSymbol : cell)));
+    setCells((prevCells) =>
+      prevCells.map((cell, i) => (idx === i ? currentSymbol : cell))
+    );
   };
 
-  const winCondition = winConditions.find(cond => {
-		const line = cond.map(cellIndex => cells[cellIndex]); /// set symbol
-		return line[0] && line.every(cellValue => cellValue === line[0]); // symbol in line => "all the same"
-	});
+  const winCondition = winConditions.find((cond) => {
+    const line = cond.map((cellIndex) => cells[cellIndex]); /// set symbol
+    return line[0] && line.every((cellValue) => cellValue === line[0]); // symbol in line => "all the same"
+  });
   // winCondition .... ex: [1, 4, 7]
-  
+
   const winnerSymbol = winCondition ? cells[winCondition[0]] : undefined;
 
-  useEffect(()=>{
-    if(tie) {
+  useEffect(() => {
+    if (tie) {
       onGameEnd("tie");
     }
-    if(winnerSymbol){
+    if (winnerSymbol) {
       onGameEnd(winnerSymbol);
     }
-  },[winnerSymbol, tie])
+  }, [winnerSymbol, tie, onGameEnd]);
   return (
     <Wrapper
       textColor={"white"}
