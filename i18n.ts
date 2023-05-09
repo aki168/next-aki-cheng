@@ -5,7 +5,6 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import translationEN from "./locales/en/translation.json";
 import translationTW from "./locales/zh-TW/translation.json";
 import translationJP from "./locales/ja/translation.json";
-import translationCN from "./locales/zh-cn/translation.json";
 
 // 設置語言和翻譯
 const resources = {
