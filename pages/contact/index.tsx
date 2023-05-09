@@ -10,6 +10,7 @@ const ContactPage: NextPage<Props> = ({t}) => {
       <Navbar />
       <div className="container mx-auto">
         <h1>Contact</h1>
+        <p>現在語言: {t("language")}</p>
         <p>{t("myName")}</p>
       </div>
     </>
