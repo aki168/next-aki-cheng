@@ -1,4 +1,11 @@
 {
   "myName":"あき",
-  "language": "日本語"
+  "language": "日本語",
+  "pages": {
+    "contact": {
+      "info": {
+        "basicInfo": "あきです。どうぞよろしくおお願いします。"
+      }
+    }
+  }
 }

@@ -1,17 +1,23 @@
 import { NextPage } from "next";
 import Navbar from "../../components/Navbar";
-import { withTranslation, WithTranslation } from "react-i18next";
+import {
+  useTranslation,
+  withTranslation,
+  WithTranslation,
+} from "react-i18next";
+interface Props extends WithTranslation {}
 
-interface Props extends WithTranslation {};
-
-const ContactPage: NextPage<Props> = ({t}) => {
+const ContactPage: NextPage<Props> = ({ t: tFn }) => {
+  const { t } = useTranslation("translation", {
+    keyPrefix: "pages.contact.info",
+  });
   return (
     <>
       <Navbar />
       <div className="container mx-auto">
-        <h1>Contact</h1>
-        <p>現在語言: {t("language")}</p>
-        <p>{t("myName")}</p>
+        <p>現在語言: {tFn("language")}</p>
+        <p>{tFn("myName")}</p>
+        <p>{t("basicInfo")}</p>
       </div>
     </>
   );

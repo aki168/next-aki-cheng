@@ -46,7 +46,7 @@ export const LanguageChanger = () => {
   const options = [
     { value: "zh-TW", label: "繁中" },
     { value: "ja", label: "日本語" },
-    { value: "cn-TW", label: "简中" },
+    { value: "en", label: "English"}
   ];
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: "language",

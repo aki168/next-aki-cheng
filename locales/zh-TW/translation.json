@@ -1,4 +1,11 @@
 {
   "myName":"阿希",
-  "language": "繁體中文"
+  "language": "繁體中文",
+  "pages": {
+    "contact": {
+      "info": {
+        "basicInfo": "你好，我是阿希。請多多指教"
+      }
+    }
+  }
 }

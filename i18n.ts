@@ -18,9 +18,6 @@ const resources = {
   ja: {
     translation: translationJP,
   },
-  "zh-cn" : {
-    translation: translationCN,
-  }
 };
 
 i18n
