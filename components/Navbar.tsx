@@ -2,6 +2,7 @@ import { Link, Button, Wrap, Text, Box } from "@chakra-ui/react";
 import { IconBtn } from "./IconBtn";
 import Head from "next/head";
 import NextLink from "next/link";
+import { LanguageChanger } from "./LanguageChanger";
 
 type NavItem = {
   key?: string | number;
@@ -93,6 +94,9 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
+        <div className="flex justify-end">
+          <LanguageChanger />
+        </div>
       </Box>
     </>
   );
@@ -105,11 +109,12 @@ const Menu = ({ navItems }: { navItems: NavItem[] | [] }) => {
         let linkToggle = () => (linkTo ? { href: linkTo } : {});
         return (
           <Button key={key || label} size={"sm"} variant={"ghost"}>
-            <Link as={NextLink}
+            <Link
+              as={NextLink}
               {...linkToggle()}
               color={"white"}
               _hover={{ color: "blue.500" }}
-              fontSize={["md","xl"]}
+              fontSize={["md", "xl"]}
             >
               {label}
             </Link>
