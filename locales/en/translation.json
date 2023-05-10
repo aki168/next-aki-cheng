@@ -1,10 +1,41 @@
 {
   "myName": "Aki",
-  "language": "English",
+  "language": "Traditional Chinese",
   "pages": {
+    "about": {
+      "info": {
+        "title": "Aki Cheng",
+        "content1": "Currently a frontend engineer specializing in React development.",
+        "content2": "Experienced in game, live streaming, and electronic payment projects.",
+        "content3": "Self-learner with strong adaptability.",
+        "content4": "Able to quickly pick up different frameworks based on project requirements.",
+        "content5": "Enjoys sharing technical knowledge and working collaboratively with teams.",
+        "content6": "Thinks about optimizing program systems."
+      },
+      "advantage": {
+        "title": "- My Advantages -",
+        "content1": "Combination of frontend expertise and operational project perspectives.",
+        "content2": "From operational strategy conceptualization to system development requirements and project management.",
+        "content3": "Passionate about programming and frontend development."
+      },
+      "skills": {
+        "title": "- Technical Skills -",
+        "programLanguage": "Programming Languages",
+        "framework": "Frameworks",
+        "UILib": "UI Libraries",
+        "i18n": "i18n Localization",
+        "tool": "Development Tools"
+      },
+      "experience": {
+        "title": "- Work Experience -",
+        "BBIN": "Chung Yo Information (BBIN)",
+        "beCreator": "BeCreator Pte. Ltd.",
+        "now": "Present"
+      }
+    },
     "contact": {
       "info": {
-        "basicInfo": "Hello, I'm Aki"
+        "basicInfo": "Hello, I'm Aki. Nice to meet you."
       }
     }
   }

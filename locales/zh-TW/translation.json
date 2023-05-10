@@ -1,7 +1,38 @@
 {
-  "myName":"阿希",
+  "myName": "阿希",
   "language": "繁體中文",
   "pages": {
+    "about": {
+      "info": {
+        "title": "鄭資馨 AKI",
+        "content1": "現任前端工程師，主力以 React 進行開發",
+        "content2": "經歷過 遊戲、直播、電子支付 相關專案",
+        "content3": "自主學習、適應力佳",
+        "content4": "視專案需求使用不同框架，並快速上手",
+        "content5": "也樂於分享技術知識，與團隊並肩作戰",
+        "content6": "思考程式系統如何優化"
+      },
+      "advantage": {
+        "title": "－ 我的優勢 －",
+        "content1": "前端技術專業 Ｘ 營運專案視角",
+        "content2": "由運營策略構思，到系統開發需求、專案管理",
+        "content3": "對程式撰寫及前端開發有無比的熱情"
+      },
+      "skills": {
+        "title": "－ 具備技術 －",
+        "programLanguage": "程式語言 | 指令",
+        "framework": "框架 | 元件庫",
+        "UILib": "UI 元件庫",
+        "i18n": "i18n 多語系",
+        "tool": "開發工具"
+      },
+      "experience": {
+        "title": "－ 工作經驗 －",
+        "BBIN": "中佑資訊 (BBIN)",
+        "beCreator": "新加坡商必創科技",
+        "now": "現在"
+      }
+    },
     "contact": {
       "info": {
         "basicInfo": "你好，我是阿希。請多多指教"
