@@ -27,11 +27,11 @@ const Navbar = () => {
     //   label: "work out",
     //   linkTo: "/work_out",
     // },
-    {
-      key: "contact",
-      label: "Contact",
-      linkTo: "/contact",
-    },
+    // {
+    //   key: "contact",
+    //   label: "Contact",
+    //   linkTo: "/contact",
+    // },
   ];
   const icons = [
     {

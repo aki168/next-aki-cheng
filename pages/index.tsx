@@ -18,11 +18,8 @@ const Home: NextPage<Data> = () => {
   return (
     <>
       <div className="container mx-auto">
-        {/* <h1 className="text-3xl font-bold underline text-blue-500">
-          Hello world! {dataSource?.name}
-        </h1> */}
       </div>
-      <About />
+      <About/>
     </>
   );
 };

@@ -36,7 +36,7 @@ const WorksPage: NextPage<Props> = ({ t: tFn }) => {
               {Array(3)
                 .fill("")
                 .map((_, i) => (
-                  <Text>{tSake(`content${i + 1}`)}</Text>
+                  <Text key={i}>{tSake(`content${i + 1}`)}</Text>
                 ))}
               <a
                 href="https://github.com/aki168/sakeholic"
@@ -111,7 +111,7 @@ const WorksPage: NextPage<Props> = ({ t: tFn }) => {
               {Array(3)
                 .fill("")
                 .map((_, i) => (
-                  <Text>{tKomo(`content${i + 1}`)}</Text>
+                  <Text key={i}>{tKomo(`content${i + 1}`)}</Text>
                 ))}
               <a
                 href="https://github.com/aki168/komoru"
@@ -172,7 +172,7 @@ const WorksPage: NextPage<Props> = ({ t: tFn }) => {
               {Array(6)
                 .fill("")
                 .map((_, i) => (
-                  <Text>{tKomo(`content${i + 4}`)}</Text>
+                  <Text key={i}>{tKomo(`content${i + 4}`)}</Text>
                 ))}
             </article>
           </div>
@@ -189,7 +189,7 @@ const WorksPage: NextPage<Props> = ({ t: tFn }) => {
               {Array(3)
                 .fill("")
                 .map((_, i) => (
-                  <Text>{tDen(`content${i + 1}`)}</Text>
+                  <Text key={i}>{tDen(`content${i + 1}`)}</Text>
                 ))}
               <a href="https://aki168.github.io/dental/" target="_blank" className="px-1 text-[16px] text-green-600">
                 DEMO
@@ -238,7 +238,7 @@ const WorksPage: NextPage<Props> = ({ t: tFn }) => {
               {Array(4)
                 .fill("")
                 .map((_, i) => (
-                  <Text>{tWow(`content${i + 1}`)}</Text>
+                  <Text key={i}>{tWow(`content${i + 1}`)}</Text>
                 ))}
             </article>
             <div className="brand__photo-list">

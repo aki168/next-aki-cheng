@@ -22,7 +22,7 @@ import {
 } from "react-i18next";
 interface Props extends WithTranslation {}
 
-const About: NextPage<Props> = ({ t: tFn }) => {
+const About: NextPage = () => {
   const { t: tInfo } = useTranslation("translation", {
     keyPrefix: "pages.about.info",
   });
@@ -51,7 +51,7 @@ const About: NextPage<Props> = ({ t: tFn }) => {
               {Array(6)
                 .fill("")
                 .map((_, i) => (
-                  <Text>{tInfo(`content${i + 1}`)}</Text>
+                  <Text key={i}>{tInfo(`content${i + 1}`)}</Text>
                 ))}
             </Stack>
             <Stack spacing={3} marginBottom={"4"}>
@@ -59,7 +59,7 @@ const About: NextPage<Props> = ({ t: tFn }) => {
               {Array(3)
                 .fill("")
                 .map((_, i) => (
-                  <Text>{tAdv(`content${i + 1}`)}</Text>
+                  <Text key={i}>{tAdv(`content${i + 1}`)}</Text>
                 ))}
             </Stack>
             
