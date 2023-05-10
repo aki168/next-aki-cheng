@@ -101,7 +101,7 @@ const About: NextPage = () => {
                 </Icon>
                 Frontend Developer -{tExp("beCreator")}
               </Text>
-              <Text>2022/08 - 現在</Text>
+              <Text>2022/08 - {tExp("now")}</Text>
             </ListItem>
           </List>
             <Heading size={"md"} paddingY={"4"}>
@@ -157,7 +157,7 @@ const About: NextPage = () => {
                   <List>
                     <ListItem>React</ListItem>
                     <ListItem>Next.js</ListItem>
-                    <ListItem>Node.js</ListItem>
+                    <ListItem>Express(Node)</ListItem>
                     <ListItem>Vue.js</ListItem>
                   </List>
                 </CardBody>
