@@ -5,7 +5,8 @@ import {
   Box,
   UseRadioProps,
 } from "@chakra-ui/react";
-import i18n from "../i18n";
+import { I18nContext } from "react-i18next";
+import { useContext } from "react";
 
 interface Props extends UseRadioProps { label: string }
 
@@ -14,7 +15,6 @@ const RadioCard = (props: Props) => {
 
   const input = getInputProps();
   const checkbox = getRadioProps();
-
   return (
     <Box as="label">
       <input {...input} />
@@ -43,6 +43,7 @@ const RadioCard = (props: Props) => {
 };
 
 export const LanguageChanger = () => {
+  const { i18n }  = useContext(I18nContext);
   const options = [
     { value: "zh-TW", label: "繁中" },
     { value: "ja", label: "日本語" },
@@ -50,7 +51,7 @@ export const LanguageChanger = () => {
   ];
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: "language",
-    defaultValue: "zh-TW",
+    defaultValue: i18n.language,
     onChange: (option) => {
       i18n.changeLanguage(option);
     },

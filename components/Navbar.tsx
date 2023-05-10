@@ -22,11 +22,11 @@ const Navbar = () => {
       label: "Works",
       linkTo: "/works",
     },
-    {
-      key: "work_out",
-      label: "work out",
-      linkTo: "/work_out",
-    },
+    // {
+    //   key: "work_out",
+    //   label: "work out",
+    //   linkTo: "/work_out",
+    // },
     {
       key: "contact",
       label: "Contact",
