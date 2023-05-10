@@ -33,6 +33,43 @@
         "now": "現在"
       }
     },
+    "works": {
+      "projectExp":"專案經歷",
+      "presentation": "發表簡報",
+      "doc": "企劃書",
+      "sakeholic":{
+        "title":"小酌圖鑑：日本酒檢索網站",
+        "content1":"以圖鑑的形式，供搜索日本清酒資訊",
+        "content2": "整合多達3,000+酒品的檢索應用",
+        "content3": "依產地、酒名等獲得風味情報、排行"
+      },
+      "komoru":{
+        "title":"KOMORU 日租旅人平台",
+        "content1":"為突破舒適圈的年輕族群打造",
+        "content2": "依據用戶心理測驗結果，安排客制化活動",
+        "content3": "並提供精選日租青旅訂房服務",
+        "doc": "企劃書",
+        "content4": "使用 MySQL 資料庫",
+        "content5": "前後端與第三方 API 以 Axios 溝通",
+        "content6": "前端：會員系統",
+        "content7": "訂單、優惠系統、JWT 身分驗證",
+        "content8": "基本資料/頭像、活動回饋專區",
+        "content9": "後端：ERD 設計、資料表建立與調整"
+      },
+      "dental":{
+        "title":"日本牙醫診所網站",
+        "content1":"依日本市場牙醫調查延伸",
+        "content2": "思考用戶端多以行動裝置預約為大宗",
+        "content3": "以 Bootstrap 的 mobile 高親和性設計"
+      },
+      "wowtch":{
+        "title": "中國市場：影音遊戲娛樂 APP",
+        "content1":"結合遊戲、影視、直播等多元娛樂 APP",
+        "content2": "參與了從策畫到上線的完整歷程。",
+        "content3": "提出超過百種企劃提案，",
+        "content4": "帶領團隊執行 80 檔以上活動，提出系統優化策略。"
+      }
+    },
     "contact": {
       "info": {
         "basicInfo": "你好，我是阿希。請多多指教"

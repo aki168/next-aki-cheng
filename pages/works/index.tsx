@@ -1,103 +1,179 @@
 import { NextPage } from "next";
-import Image from 'next/image'
+import Image from "next/image";
 import Layout from "../../components/Layout";
+import { Text } from "@chakra-ui/react";
+import {
+  useTranslation,
+  withTranslation,
+  WithTranslation,
+} from "react-i18next";
+interface Props extends WithTranslation {}
 
-const WorksPage: NextPage = () => {
+const WorksPage: NextPage<Props> = ({ t: tFn }) => {
+  const { t } = useTranslation("translation", {
+    keyPrefix: "pages.works",
+  });
+  const { t: tSake } = useTranslation("translation", {
+    keyPrefix: "pages.works.sakeholic",
+  });
+  const { t: tKomo } = useTranslation("translation", {
+    keyPrefix: "pages.works.komoru",
+  });
+  const { t: tDen } = useTranslation("translation", {
+    keyPrefix: "pages.works.dental",
+  });
+  const { t: tWow } = useTranslation("translation", {
+    keyPrefix: "pages.works.wowtch",
+  });
   return (
     <Layout>
-      <div className="mx-auto">
+      <div className="mx-auto leading-relaxed">
         <section>
           <div className="brand">
             <h2 className="brand__title">Works</h2>
-            <h3 className="brand__subtitle">小酌圖鑑：日本酒檢索網站</h3>
-            <article className="brand__content">
-              以圖鑑的形式，供搜索日本清酒資訊
-              <br />
-              整合多達3,000+酒品的檢索應用
-              <br />
-              依產地、酒名等獲得風味情報、排行
-              <br />
-              <a href="https://github.com/aki168/sakeholic" target="_blank" className="px-1">
+            <h3 className="brand__subtitle">{tSake("title")}</h3>
+            <article>
+              {Array(3)
+                .fill("")
+                .map((_, i) => (
+                  <Text>{tSake(`content${i + 1}`)}</Text>
+                ))}
+              <a
+                href="https://github.com/aki168/sakeholic"
+                target="_blank"
+                className="px-1 text-[16px] text-green-600"
+              >
                 GitHub
               </a>{" "}
               |
-              <a href="https://aki168.github.io/sakeholic/" target="_blank" className="px-1">
+              <a
+                href="https://aki168.github.io/sakeholic/"
+                target="_blank"
+                className="px-1 text-[16px] text-green-600"
+              >
                 DEMO
               </a>
               |
-              <a href=" https://docs.google.com/presentation/d/1KX3Ik6XWJaW9c_FRWk2a39AL90tJG4WeWA1TQKdTm5Q/edit?usp=sharing" target="_blank" className="px-1">
-              線上發表簡報
+              <a
+                href=" https://docs.google.com/presentation/d/1KX3Ik6XWJaW9c_FRWk2a39AL90tJG4WeWA1TQKdTm5Q/edit?usp=sharing"
+                target="_blank"
+                className="px-1 text-[16px] text-green-600"
+              >
+                {t("presentation")}
               </a>
             </article>
             <div className="brand__photo-list">
               <div className="brand__photo-list__one-item">
-                <Image width={700} height={500} src="/point4z.png" alt="brand_img" className="mx-auto" />
+                <Image
+                  width={700}
+                  height={500}
+                  src="/point4z.png"
+                  alt="brand_img"
+                  className="mx-auto"
+                />
               </div>
               <div className="brand__photo-list__two-item">
-                <Image width={400} height={400} src="/point2.png" alt="brand_img" />
-                <Image width={400} height={400} src="/point3.png" alt="brand_img" />
+                <Image
+                  width={400}
+                  height={400}
+                  src="/point2.png"
+                  alt="brand_img"
+                />
+                <Image
+                  width={400}
+                  height={400}
+                  src="/point3.png"
+                  alt="brand_img"
+                />
               </div>
               <div className="brand__photo-list__two-item">
-                <Image width={400} height={400} src="/point1.png" alt="brand_img" />
-                <Image width={400} height={400} src="/skill-s.png" alt="brand_img" />
+                <Image
+                  width={400}
+                  height={400}
+                  src="/point1.png"
+                  alt="brand_img"
+                />
+                <Image
+                  width={400}
+                  height={400}
+                  src="/skill-s.png"
+                  alt="brand_img"
+                />
               </div>
             </div>
           </div>
         </section>
         <section className="brand--wrap--none">
           <div className="brand">
-            <h2 className="brand__title">專案經歷</h2>
-            <h3 className="brand__subtitle">KOMORU 日租旅人平台</h3>
-            <article className="brand__content">
-              為突破舒適圈的年輕族群打造
-              <br />
-              依據用戶心理測驗結果，安排客制化活動
-              <br />
-              並提供精選日租青旅訂房服務
-              <br />
-              <a href="https://github.com/aki168/komoru" target="_blank" className="px-1">
+            <h2 className="brand__title">{t("projectExp")}</h2>
+            <h3 className="brand__subtitle">{tKomo("title")}</h3>
+            <article>
+              {Array(3)
+                .fill("")
+                .map((_, i) => (
+                  <Text>{tKomo(`content${i + 1}`)}</Text>
+                ))}
+              <a
+                href="https://github.com/aki168/komoru"
+                target="_blank"
+                className="px-1 text-[16px] text-green-600"
+              >
                 GitHub
               </a>{" "}
               |
               <a
                 href="https://docs.google.com/document/d/1YBaLi97KjZeulR4dnGp-7TjwSsYcH7I7/edit?usp=sharing&ouid=101903928695152348684&rtpof=true&sd=true"
-                target="_blank" className="px-1"
+                target="_blank"
+                className="px-1 text-[16px] text-green-600"
               >
-                企劃書
+                {t("doc")}
               </a>
             </article>
             <div className="brand__photo-list">
               <div className="brand__photo-list__one-item">
-                <Image width={700} height={500} src="/komoru01.jpg" alt="brand_img" className="mx-auto" />
+                <Image
+                  width={700}
+                  height={500}
+                  src="/komoru01.jpg"
+                  alt="brand_img"
+                  className="mx-auto"
+                />
               </div>
               <div className="brand__photo-list__two-item">
-                <Image width={400} height={400} src="/komoru02.jpg" alt="brand_img" />
-                <Image width={400} height={400} src="/komoru03.jpg" alt="brand_img" />
+                <Image
+                  width={400}
+                  height={400}
+                  src="/komoru02.jpg"
+                  alt="brand_img"
+                />
+                <Image
+                  width={400}
+                  height={400}
+                  src="/komoru03.jpg"
+                  alt="brand_img"
+                />
               </div>
               <div className="brand__photo-list__two-item">
-                <Image width={400} height={400} src="/home-user.png" alt="brand_img" />
-                <Image width={400} height={400} src="/skill.jpg" alt="brand_img" />
+                <Image
+                  width={400}
+                  height={400}
+                  src="/home-user.png"
+                  alt="brand_img"
+                />
+                <Image
+                  width={400}
+                  height={400}
+                  src="/skill.jpg"
+                  alt="brand_img"
+                />
               </div>
             </div>
-            <article className="brand__content">
-              React Hooks、Nodejs Express
-              <br />
-              (Router/ Controller/ Model)
-              <br />
-              使用 MySQL 資料庫
-              <br />
-              前後端與第三方 API 以 Axios 溝通
-              <br />
-            </article>
-            <article className="brand__content">
-              前端：會員系統
-              <br />
-              訂單、優惠系統、JWT 身分驗證
-              <br />
-              基本資料/頭像、活動回饋專區
-              <br />
-              <br />
-              後端：ERD 設計、資料表建立與調整
+            <article>
+              {Array(6)
+                .fill("")
+                .map((_, i) => (
+                  <Text>{tKomo(`content${i + 4}`)}</Text>
+                ))}
             </article>
           </div>
         </section>
@@ -105,47 +181,75 @@ const WorksPage: NextPage = () => {
           <div className="brand">
             <h2 className="brand__title">Works</h2>
             <h3 className="brand__subtitle">
-              日本牙醫診所網站
+              {tDen("title")}
               <br />
               あき歯科クリニック表参道
             </h3>
-            <article className="brand__content">
-              依日本市場牙醫調查延伸
-              <br />
-              思考用戶端多以行動裝置預約為大宗
-              <br />
-              以 Bootstrap 的 mobile 高親和性設計
-              <br />
-              <a href="https://aki168.github.io/dental/" target="_blank">
+            <article>
+              {Array(3)
+                .fill("")
+                .map((_, i) => (
+                  <Text>{tDen(`content${i + 1}`)}</Text>
+                ))}
+              <a href="https://aki168.github.io/dental/" target="_blank" className="px-1 text-[16px] text-green-600">
                 DEMO
+              </a>
+              |
+              <a
+                href="https://www.figma.com/proto/0UWnQgV1nS1f1dSurOV9WO/03-%E9%84%AD%E8%B3%87%E9%A6%A8-%5B%E5%B0%8F%E5%B0%88%5D-%E6%97%A5%E6%9C%AC%E7%89%99%E9%86%AB%E8%A8%BA%E6%89%80%E5%AE%98%E7%B6%B2?node-id=502-22"
+                target="_blank"
+                className="px-1 text-[16px] text-green-600"
+              >
+                {t("presentation")}
               </a>
             </article>
             <div className="brand__photo-list">
               <div className="brand__photo-list__one-item">
-                <Image  width={700} height={500} src="/dental2.jpg" alt="brand_img" className="mx-auto" />
+                <Image
+                  width={700}
+                  height={500}
+                  src="/dental2.jpg"
+                  alt="brand_img"
+                  className="mx-auto"
+                />
               </div>
               <div className="brand__photo-list__two-item">
-                <Image width={400} height={400} src="/dental1.jpg" alt="brand_img" />
-                <Image width={400} height={400} src="/dental3.jpg" alt="brand_img" />
+                <Image
+                  width={400}
+                  height={400}
+                  src="/dental1.jpg"
+                  alt="brand_img"
+                />
+                <Image
+                  width={400}
+                  height={400}
+                  src="/dental3.jpg"
+                  alt="brand_img"
+                />
               </div>
             </div>
           </div>
         </section>
         <section className="brand--wrap--none">
           <div className="brand">
-            <h2 className="brand__title">專案經歷</h2>
-            <h3 className="brand__subtitle">中國市場：影音遊戲娛樂 APP</h3>
-            <article className="brand__content">
-              結合遊戲、影視、直播等多元娛樂 APP <br />
-              參與了從策畫到上線的完整歷程。
-              <br />
-              提出超過百種企劃提案，
-              <br />
-              實際帶領團隊執行 80 檔以上的活動，協助 PM 提出系統優化策略。
+            <h2 className="brand__title">{t("projectExp")}</h2>
+            <h3 className="brand__subtitle">{tWow("title")}</h3>
+            <article>
+              {Array(4)
+                .fill("")
+                .map((_, i) => (
+                  <Text>{tWow(`content${i + 1}`)}</Text>
+                ))}
             </article>
             <div className="brand__photo-list">
               <div className="brand__photo-list__one-item">
-                <Image  width={700} height={500} src="/wowtch.jpg" alt="brand_img" className="mx-auto" />
+                <Image
+                  width={700}
+                  height={500}
+                  src="/wowtch.jpg"
+                  alt="brand_img"
+                  className="mx-auto"
+                />
               </div>
             </div>
           </div>

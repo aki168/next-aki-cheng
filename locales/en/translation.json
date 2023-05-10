@@ -33,6 +33,43 @@
         "now": "Present"
       }
     },
+    "works": {
+      "projectExp": "Project",
+      "presentation": "Presentation",
+      "doc": "Business Plan",
+      "sakeholic": {
+        "title": "Sakeholic: Japanese Sake Search Website",
+        "content1": "A search application for Japanese sake information in the form of an encyclopedia",
+        "content2": "Integrated search for over 3,000 sake products",
+        "content3": "Obtain flavor information and rankings based on origin and name"
+      },
+      "komoru": {
+        "title": "KOMORU: Daily Traveler Platform",
+        "content1": "Created for young individuals to break out of their comfort zone",
+        "content2": "Customized activities based on user psychology test results",
+        "content3": "Offers selected booking services for daily rental hostels",
+        "doc": "Business Plan",
+        "content4": "Uses MySQL database",
+        "content5": "Frontend and backend communication with third-party APIs using Axios",
+        "content6": "Frontend: Member system",
+        "content7": "Order and promotion system, JWT identity verification",
+        "content8": "Basic information/avatar, activity feedback section",
+        "content9": "Backend: ERD design, data table creation and adjustment"
+      },
+      "dental": {
+        "title": "Japanese Dental Clinic Website",
+        "content1": "Extended based on dental survey in the Japanese market",
+        "content2": "Designed with high affinity for mobile devices using Bootstrap mobile",
+        "content3": ""
+      },
+      "wowtch": {
+        "title": "China Market: Video Game Entertainment App",
+        "content1": "Combines gaming, video, and live streaming in a diverse entertainment app",
+        "content2": "Involved in the entire process from planning to launch",
+        "content3": "Presented over a hundred project proposals",
+        "content4": "Led the team in executing more than 80 events and proposed system optimization strategies"
+      }
+    },
     "contact": {
       "info": {
         "basicInfo": "Hello, I'm Aki. Nice to meet you."
