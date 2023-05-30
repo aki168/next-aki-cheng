@@ -24,7 +24,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "ja", // 預設語言為 ja
+    lng: "zh-TW", // 預設語言
     fallbackLng: "en",
     debug: true,
 
