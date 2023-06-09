@@ -6,6 +6,13 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer)
+      config.resolve.fallback = {
+        fs: false,
+      };
+    return config;
+  },
   //  ignoreBuildErrors: true,
 };
 
