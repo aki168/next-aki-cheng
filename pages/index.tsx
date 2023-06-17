@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import { Data } from "./api/hello";
 import { useEffect, useState } from "react";
 import About from "./about";
+import Head from "next/head";
 
 const Home: NextPage<Data> = () => {
   const [dataSource, setDataSource] = useState<Data | null>(null);
@@ -17,9 +18,11 @@ const Home: NextPage<Data> = () => {
   }, []);
   return (
     <>
-      <div className="container mx-auto">
-      </div>
-      <About/>
+      <Head>
+        <title>HERE IS AKI CHENG</title>
+      </Head>
+      <div className="container mx-auto"></div>
+      <About />
     </>
   );
 };
