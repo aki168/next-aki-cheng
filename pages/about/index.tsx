@@ -46,7 +46,9 @@ const About: NextPage = () => {
               src="/icon.jpg"
               alt="aki"
             />
-            <Heading marginBottom={"4"} size={"md"}>{tInfo("title")}</Heading>
+            <Heading marginBottom={"4"} size={"md"}>
+              {tInfo("title")}
+            </Heading>
             <Stack spacing={3} marginBottom={"8"}>
               {Array(6)
                 .fill("")
@@ -62,48 +64,79 @@ const About: NextPage = () => {
                   <Text key={i}>{tAdv(`content${i + 1}`)}</Text>
                 ))}
             </Stack>
-            
-          <List spacing={6} paddingY={"4"} marginBottom={"8"}>
-            <Heading size={"md"}>{tExp("title")}</Heading>
-            <ListItem fontSize={"lg"}>
-              <Image
-                src="/bbin.png"
-                width={"100"}
-                height={"30"}
-                alt="bbin"
-                className="mx-auto"
-              />
-              <Text>
-                <Icon viewBox="0 0 200 200" color={"blackAlpha.300"} marginEnd={"2"}>
-                  <path
-                    fill="currentColor"
-                    d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
-                  />
-                </Icon>
-                Project Manager - {tExp("BBIN")}
-              </Text>
-              <Text>2019/12 - 2022/2</Text>
-            </ListItem>
-            <ListItem fontSize={"lg"}>
-              <Image
-                src="/beCreator.png"
-                width={"50"}
-                height={"50"}
-                alt="beCreator"
-                className="mx-auto"
-              />
-              <Text>
-                <Icon viewBox="0 0 200 200" color={"blackAlpha.300"} marginEnd={"2"}>
-                  <path
-                    fill="currentColor"
-                    d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
-                  />
-                </Icon>
-                Frontend Developer -{tExp("beCreator")}
-              </Text>
-              <Text>2022/08 - {tExp("now")}</Text>
-            </ListItem>
-          </List>
+
+            <List spacing={6} paddingY={"4"} marginBottom={"8"}>
+              <Heading size={"md"}>{tExp("title")}</Heading>
+              <ListItem fontSize={"lg"}>
+                <Image
+                  src="/cathay.jpg"
+                  width={"50"}
+                  height={"50"}
+                  alt="beCreator"
+                  className="mx-auto"
+                />
+                <Text>
+                  <Icon
+                    viewBox="0 0 200 200"
+                    color={"blackAlpha.300"}
+                    marginEnd={"2"}
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+                    />
+                  </Icon>
+                  Frontend Engineer - {tExp("cathay")}
+                </Text>
+                <Text>2023/12 - {tExp("now")}</Text>
+              </ListItem>
+              <ListItem fontSize={"lg"}>
+                <Image
+                  src="/beCreator.png"
+                  width={"50"}
+                  height={"50"}
+                  alt="beCreator"
+                  className="mx-auto"
+                />
+                <Text>
+                  <Icon
+                    viewBox="0 0 200 200"
+                    color={"blackAlpha.300"}
+                    marginEnd={"2"}
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+                    />
+                  </Icon>
+                  Frontend Engineer - {tExp("beCreator")}
+                </Text>
+                <Text>2022/08 - 2023/11</Text>
+              </ListItem>
+              <ListItem fontSize={"lg"}>
+                <Image
+                  src="/bbin.png"
+                  width={"100"}
+                  height={"30"}
+                  alt="bbin"
+                  className="mx-auto"
+                />
+                <Text>
+                  <Icon
+                    viewBox="0 0 200 200"
+                    color={"blackAlpha.300"}
+                    marginEnd={"2"}
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+                    />
+                  </Icon>
+                  Project Manager - {tExp("BBIN")}
+                </Text>
+                <Text>2019/12 - 2022/02</Text>
+              </ListItem>
+            </List>
             <Heading size={"md"} paddingY={"4"}>
               {tSkill("title")}
             </Heading>
