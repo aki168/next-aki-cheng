@@ -5,70 +5,70 @@
     "about": {
       "info": {
         "title": "Aki Cheng",
-        "content1": "Currently a frontend engineer specializing in React development.",
-        "content2": "Experienced in game, live streaming, and electronic payment projects.",
-        "content3": "Self-learner with strong adaptability.",
-        "content4": "Able to quickly pick up different frameworks based on project requirements.",
-        "content5": "Enjoys sharing technical knowledge and working collaboratively with teams.",
-        "content6": "Thinks about optimizing program systems."
+        "content1": "Currently a front-end engineer, mainly developing with React.",
+        "content2": "Experienced in projects related to gaming, live streaming, and electronic payments.",
+        "content3": "Self-motivated learner with strong adaptability.",
+        "content4": "Able to quickly master different frameworks based on project requirements.",
+        "content5": "Also enthusiastic about sharing technical knowledge and working alongside the team.",
+        "content6": "Constantly thinking about how to optimize system performance."
       },
       "advantage": {
-        "title": "- My Advantages -",
-        "content1": "Combination of frontend expertise and operational project perspectives.",
-        "content2": "From operational strategy conceptualization to system development requirements and project management.",
-        "content3": "Passionate about programming and frontend development."
+        "title": "－ My Strengths －",
+        "content1": "Front-end technical expertise Ｘ Operational project perspective.",
+        "content2": "From conceptualizing operational strategies to developing system requirements and project management.",
+        "content3": "Has an unwavering passion for coding and front-end development."
       },
       "skills": {
-        "title": "- Technical Skills -",
-        "programLanguage": "Programming Languages",
-        "framework": "Frameworks",
-        "UILib": "UI Libraries",
-        "i18n": "i18n Localization",
+        "title": "－ Technical Skills －",
+        "programLanguage": "Programming Languages | Commands",
+        "framework": "Frameworks | Component Libraries",
+        "UILib": "UI Component Libraries",
+        "i18n": "i18n Multi-language Support",
         "tool": "Development Tools"
       },
       "experience": {
-        "title": "- Work Experience -",
-        "BBIN": "Chung Yo Information (BBIN)",
-        "beCreator": "BeCreator Pte. Ltd.",
+        "title": "－ Work Experience －",
+        "BBIN": "BBIN Technology",
+        "beCreator": "BeCreator Singapore",
         "cathay": "Cathay Financial Holdings",
-        "now": "Present"
+        "now": "Currently employed"
       }
     },
     "works": {
-      "projectExp": "Project",
-      "presentation": "Presentation",
-      "doc": "Business Plan",
+      "projectExp": "Project Experience",
+      "presentation": "Presentation Slides",
+      "doc": "Project Proposal",
       "sakeholic": {
         "title": "Sakeholic: Japanese Sake Search Website",
-        "content1": "A search application for Japanese sake information in the form of an encyclopedia",
-        "content2": "Integrated search for over 3,000 sake products",
-        "content3": "Obtain flavor information and rankings based on origin and name"
+        "content1": "A sake search website in the style of a catalog.",
+        "content2": "An integrated search application with over 3,000 sake varieties.",
+        "content3": "Get flavor profiles and rankings based on region, sake name, etc."
       },
       "komoru": {
-        "title": "KOMORU: Daily Traveler Platform",
-        "content1": "Created for young individuals to break out of their comfort zone",
-        "content2": "Customized activities based on user psychology test results",
-        "content3": "Offers selected booking services for daily rental hostels",
-        "doc": "Business Plan",
-        "content4": "Uses MySQL database",
-        "content5": "Frontend and backend communication with third-party APIs using Axios",
-        "content6": "Frontend: Member system",
-        "content7": "Order and promotion system, JWT identity verification",
-        "content8": "Basic information/avatar, activity feedback section",
-        "content9": "Backend: ERD design, data table creation and adjustment"
+        "title": "KOMORU Day Traveler Platform",
+        "content1": "Designed for young people looking to step out of their comfort zone.",
+        "content2": "Custom activities arranged based on users' psychological test results.",
+        "content3": "Provides curated day-trip hostel booking services.",
+        "doc": "Project Proposal",
+        "content4": "Uses MySQL database.",
+        "content5": "Communicates between front-end, back-end, and third-party APIs using Axios.",
+        "content6": "Front-end: Membership system",
+        "content7": "Order management, discount system, JWT authentication.",
+        "content8": "Basic info/avatar, activity feedback section.",
+        "content9": "Back-end: ERD design, table creation, and adjustment."
       },
       "dental": {
         "title": "Japanese Dental Clinic Website",
-        "content1": "Extended based on dental survey in the Japanese market",
-        "content2": "Designed with high affinity for mobile devices using Bootstrap mobile",
-        "content3": ""
+        "content1": "A website based on research of the Japanese dental market.",
+        "content2": "Designed with mobile booking in mind, as most users prefer mobile devices.",
+        "content3": "Built using Bootstrap for high mobile compatibility."
       },
       "wowtch": {
-        "title": "China Market: Video Game Entertainment App",
-        "content1": "Combines gaming, video, and live streaming in a diverse entertainment app",
-        "content2": "Involved in the entire process from planning to launch",
-        "content3": "Presented over a hundred project proposals",
-        "content4": "Led the team in executing more than 80 events and proposed system optimization strategies"
+        "title": "Chinese Market: Video Game and Entertainment App",
+        "content1": "An app integrating games, video content, and live streaming.",
+        "content2": "Participated in the entire process from planning to launch.",
+        "content3": "Proposed over 100 project plans,",
+        "content4": "Led the team in executing over 80 activities, and proposed system optimization strategies."
       }
     },
     "contact": {
